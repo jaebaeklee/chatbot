@@ -72,7 +72,7 @@ public class bot extends PircBot {
 
     static String symbolSearch(String symbol) {
         try {
-            URL request = new URL("https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=5min&apikey=A406SN7EO3N2Y9FJ");
+            URL request = new URL("https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="+symbol+"&interval=5min&apikey="); //insert api key
             HttpURLConnection connection = (HttpURLConnection) request.openConnection();
             InputStreamReader inputStream = new InputStreamReader(connection.getInputStream(), "UTF-8");
             BufferedReader bufferedReader = new BufferedReader(inputStream);
@@ -93,7 +93,7 @@ public class bot extends PircBot {
         StringBuilder result = new StringBuilder();
         try
         {
-            URL request = new URL("http://api.openweathermap.org/data/2.5/weather?zip="+zipcode+"&appid=f8786bccccc3e0f79c8c97c1acad26f9");
+            URL request = new URL("http://api.openweathermap.org/data/2.5/weather?zip="+zipcode+"&appid="); //insert api key
             HttpURLConnection connection = (HttpURLConnection) request.openConnection();
             connection.setRequestMethod("GET");
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -115,7 +115,7 @@ public class bot extends PircBot {
         StringBuilder result = new StringBuilder();
         try
         {
-            URL request = new URL("http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=f8786bccccc3e0f79c8c97c1acad26f9");
+            URL request = new URL("http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="); //insert api key
             HttpURLConnection connection = (HttpURLConnection) request.openConnection();
             connection.setRequestMethod("GET");
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
